@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Hind&display=swap");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  /* color: #62eec7; */
+}
+
+:root {
+  --border-radius: 10px;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Orbitron", sans-serif;
+}
+
+.Card {
+  padding: 1px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  width: 100%;
+  color: #002060;
+}
+
+.CardInner {
+  padding: 16px 16px;
+  background-color: #62eec7;
+  border-radius: var(--border-radius);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Icon {
+  min-width: 46px;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  margin: 0px 12px;
+  border: 2px solid #002060;
+  transform: scale(0.9);
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  svg {
+    transform: translate(-1px, -1px);
+  }
+}
+
+.Icon:hover {
+  transform: scale(1);
+  border: 2.5px dotted;
+}
+
+label {
+  /* font-family: "Hind", sans-serif; */
+  display: block;
+  color: #002060;
+  margin-bottom: 12px;
+}
+
+.InputContainer {
+  width: 100%;
+}
+
+input {
+  background-color: #e3edf7;
+  padding: 16px 32px;
+  border: none;
+  display: block;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  color: #a9b8c9;
+  transition: all 240ms ease-out;
+  width: 100%;
+
+  &::placeholder {
+    color: #6d7f8f;
+    opacity: 0.4;
+  }
+
+  &:focus {
+    outline: none;
+    color: #6d7f8f;
+    background-color: lighten(#e3edf7, 3%);
+  }
+}
+
+.InputContainer {
+  --top-shadow: inset 1px 1px 3px #c5d4e3, inset 2px 2px 6px #c5d4e3;
+  --bottom-shadow: inset 1px 1px 3px #c5d4e3, inset 2px 2px 6px #c5d4e3;
+
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    left: 0;
+    top: 0;
+    display: block;
+    content: "";
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  &:before {
+    box-shadow: var(--bottom-shadow);
+  }
+
+  &:after {
+    box-shadow: var(--top-shadow);
+  }
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.autocomplete-items {
+  /* position: absolute; */
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-item {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.autocomplete-item:hover {
+  background-color: #e9e9e9;
+}
+
+.selected-item {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.selected-item-name {
+  font-weight: bold;
+}
+
+.selected-item-expiry {
+  margin-top: 10px;
+  color: gray;
+}
+
+.add-item-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #d4d4d4;
+  border-radius: var(--border-radius);
+  z-index: 100;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
+.add-item-popup input {
+  width: 100%;
+}
+
+.add-item-popup button {
+  margin-top: 24px;
+}
+.expiry-list {
+  /* margin-top: 20px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.expiry-item {
+  display: flex;
+  align-items: center;
+  margin: 5px auto;
+  padding: 10px;
+  border-radius: 5px;
+  width: 33.33%;
+  flex-wrap: wrap;
+  border: 2px solid;
+  overflow: auto;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.expiry-item:hover {
+  transform: scale(1.1);
+  border: 2px dotted;
+}
+
+.expiry-item-name {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.expiry-item-expiry {
+  color: gray;
+}
+
+#searchButton {
+  cursor: pointer;
+}
+button {
+  margin: 8px auto;
+  cursor: pointer;
+}
+/* <!-- HTML !-->
+<button class="button-85" role="button">Button 85</button> */
+
+/* CSS */
+button {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
